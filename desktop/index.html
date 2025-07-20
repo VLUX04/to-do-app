@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>To-Do App (Web)</title>
 </head>
 <body>
   <h1>To-Do List</h1>
-  <input type="text" id="todoInput" placeholder="New task">
+  <input type="text" id="todoInput" placeholder="New task" />
   <button onclick="addTodo()">Add</button>
   <ul id="todoList"></ul>
 
@@ -25,6 +25,7 @@
 
     async function addTodo() {
       const input = document.getElementById('todoInput');
+      if (!input.value.trim()) return;
       await fetch('http://localhost:3000/todos', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -34,7 +35,21 @@
       loadTodos();
     }
 
-    loadTodos();
+    async function waitForBackend(attempts = 10) {
+      for (let i = 0; i < attempts; i++) {
+        try {
+          const res = await fetch('http://localhost:3000/todos');
+          if (res.ok) {
+            loadTodos();
+            return;
+          }
+        } catch {}
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
+      document.body.innerHTML = "<h2>Failed to load backend.</h2>";
+    }
+
+    waitForBackend();
   </script>
 </body>
 </html>

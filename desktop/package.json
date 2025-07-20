@@ -1,13 +1,28 @@
 {
-  "name": "desktop-app",
+  "name": "todo-app",
   "version": "1.0.0",
   "main": "main.js",
+  "build": {
+    "appId": "com.example.todoapp",
+    "productName": "To-Do App",
+    "win": {
+      "target": "nsis"
+    },
+    "directories": {
+      "output": "../dist"
+    }
+  },
   "scripts": {
     "start": "electron .",
-    "package": "electron-packager . todo-app --platform=win32 --arch=x64 --out=dist --overwrite"
+    "package": "electron-packager . todo-app --platform=win32 --arch=x64 --out=../dist --overwrite",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
   },
   "devDependencies": {
     "electron": "^28.0.0",
-    "electron-packager": "^17.1.2"
+    "electron-builder": "^24.8.0"
   }
 }
