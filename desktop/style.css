@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0px 20px 20px 25px;
+    background-color: #D9E8FF;
+}
+.card {
+    background-color: #FFFFFF;
+    width: 200px;
+    height: 150px;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 8px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+#todoList {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    grid-auto-rows: minmax(175px, auto);
+}
+h1 {
+    color: #003FA5;
+}
+#dayControls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+#dayControls a{
+    font-size: 1.2em;
+    color: #003FA5;
+    margin: 0 10px;
+}
+
+.prev-btn,
+.next-btn {
+    padding: 10px;
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.prev-btn {
+    background-image: url('sprites/prev.png');
+}
+.next-btn {
+    background-image: url('sprites/next.png');
+}
+
