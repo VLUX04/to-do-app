@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron');
+app.commandLine.appendSwitch('lang', 'en-GB');
 const path = require('path');
 const { startBackendServer } = require('./backend');
 

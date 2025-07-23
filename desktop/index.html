@@ -5,15 +5,30 @@
   <title>To-Do App</title>
 </head>
 <body>
-  <h1>To-Do App</h1>
-  <div id="dayControls">
-    <button class="prev-btn" onclick="previousDay()"></button>
-    <a> TODOS FOR DD/MM/YYYY </a>
-    <button class="next-btn" onclick="nextDay()"></button>
+  <div id="header">
+    <h1>To-Do App</h1>
+    <div id="headerButtons">
+      <button id="add" onclick="openAddBox()" ></button>
+      <button id="completed"></button>
+      <button id="calendar"></button>
+    </div>
   </div>
+
+  <div id="overlay">
+    <div id="todoInputContainer">
+      <input type="text" id="titleInput" placeholder="Title" />
+      <textarea type="text" id="todoInput" placeholder="What needs to be done?" ></textarea>
+      <input type="date" id="dateInput" />
+      <div id="todoInputButtons">
+        <button id="saveButton" onclick="addTodo()">Save</button>
+        <button id="cancelButton" onclick="document.getElementById('overlay').style.display='none'">Cancel</button>
+      </div>
+    </div>
+  </div>
+  
   <div id="todoList"></div>
 
-   <link rel="stylesheet" href="style.css" />
-   <script src="index.js" ></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" ></script>
 </body>
 </html>

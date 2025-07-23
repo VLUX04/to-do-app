@@ -36,6 +36,17 @@ function startBackendServer(userDataPath) {
     res.status(201).json(todo);
   });
 
+  app.delete('/todos/:id', (req, res) => {
+    const id = Number(req.params.id);
+    const initialLength = todos.length;
+    todos = todos.filter(todo => todo.id !== id);
+    if (todos.length === initialLength) {
+      return res.status(404).json({ error: "Todo not found." });
+    }
+    saveTodos();
+    res.json({ message: "Todo deleted successfully." });
+  });
+
   app.listen(3000, 'localhost');
 }
 

@@ -1,25 +1,113 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0px 20px 20px 25px;
+    padding: 20px;
+    padding-top: 0;
     background-color: #D9E8FF;
 }
-.card {
-    background-color: #FFFFFF;
-    width: 200px;
-    height: 150px;
-    border-radius: 8px;
-    padding: 12px;
-    margin: 8px 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+
 #todoList {
-    align-items: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    grid-auto-rows: minmax(175px, auto);
+    gap: 24px;
+    justify-items: center;
+
 }
+
+.card {
+    background-color: #ffffff;
+    width: 200px;
+    max-width: 210px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;    
+}
+
+.card h3, .card p{
+    margin: 10px;
+}
+
+.card #todoText, .card h3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+     
+}
+
+#bottom-container {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    margin-top: auto;
+    padding: 10px;
+
+    
+}
+
+.card #checkbox-container {
+    display: flex;
+    margin-top: auto;
+}
+
+#checkbox-container input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+#checkbox-container label {
+    align-self: center;
+    color: #003FA5;
+    font-weight: bold;
+}
+
+
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+#headerButtons {
+    display: flex;
+    gap: 25px;
+}
+#headerButtons button, #button-container button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#button-container button {
+    width: 25px;
+    height: 25px;
+}
+
+#headerButtons #add {
+    background-image: url('sprites/add.png');
+}
+#headerButtons #completed {
+    background-image: url('sprites/completed.png');
+}
+#headerButtons #calendar {
+    background-image: url('sprites/calendar.png');
+}
+
+#button-container #delete {
+    background-image: url('sprites/delete.png');
+}
+#button-container #edit {
+    background-image: url('sprites/edit.png');
+}
+
 h1 {
     color: #003FA5;
 }
@@ -51,5 +139,66 @@ h1 {
 }
 .next-btn {
     background-image: url('sprites/next.png');
+}
+
+
+#overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#todoInputContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 400px;
+    z-index: 1000;
+    background-color: #FFFFFF;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+#todoInputButtons {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+#todoInputContainer input,
+#todoInputContainer button,
+#todoInputContainer textarea {   
+    padding: 5px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+#todoInputContainer #todoInput {
+    height: 200px;
+    resize: none;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;      
+    vertical-align: top;  
+}
+
+#todoInputContainer #dateInput {
+    display: flex;
+    width: 105px;
+    justify-self: end;
+}
+
+
+
+#overlay{
+    display: none;
 }
 
