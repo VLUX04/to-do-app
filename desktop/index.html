@@ -9,7 +9,7 @@
     <h1>To-Do App</h1>
     <div id="headerButtons">
       <button id="add" onclick="openAddBox()" ></button>
-      <button id="completed"></button>
+      <button id="completed" onclick="goToDonePage()"></button>
       <button id="calendar"></button>
     </div>
   </div>
@@ -20,7 +20,7 @@
       <textarea type="text" id="todoInput" placeholder="What needs to be done?" ></textarea>
       <input type="date" id="dateInput" />
       <div id="todoInputButtons">
-        <button id="saveButton" onclick="addTodo()">Save</button>
+        <button id="saveButton" onclick="addOrUpdateTodo()">Save</button>
         <button id="cancelButton" onclick="document.getElementById('overlay').style.display='none'">Cancel</button>
       </div>
     </div>
