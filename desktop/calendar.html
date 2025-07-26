@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To-Do App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="header">
+    <h1>Calendar</h1>
+    <div id="headerButtons">
+      <button id="return" onclick="goToHomePage()"></button>
+    </div>
+  </div>
+  
+  <div id="calendar">
+    <div id="calendarHeader">
+      <button id="prevMonth" onclick="changeMonth('prev')"></button>
+      <h3 id="monthYear">Month of Year</h3>
+      <button id="nextMonth" onclick="changeMonth('next')"></button>
+    </div>
+      <div id="calendarGrid"></div>
+  </div>
+
+  <script src="calendar.js"></script>
+</body>
+</html>

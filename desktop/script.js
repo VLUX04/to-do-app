@@ -212,4 +212,8 @@ function goToHomePage() {
   window.location.href = 'index.html';  
 }
 
+function goToCalendarPage() {
+  window.location.href = 'calendar.html';
+}
+
 waitForBackend();

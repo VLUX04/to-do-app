@@ -80,7 +80,7 @@ body {
     display: flex;
     gap: 25px;
 }
-#headerButtons button, #button-container button {
+#headerButtons button, #button-container button, #calendarHeader button {
     width: 30px;
     height: 30px;
     border: none;
@@ -210,3 +210,47 @@ h1 {
     display: none;
 }
 
+
+.weekdays, .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 25px;
+    padding: 25px;
+}
+
+#monthYear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5em;
+    color: #003FA5;
+    width: 200px;
+}
+
+#calendarHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    gap: 25px;
+}
+
+#prevMonth {
+    background-image: url('sprites/prev.png');
+}
+
+#nextMonth {
+    background-image: url('sprites/next.png');
+}
+
+#calendarHeader button{
+    width: 20px;
+}
+
+.day.has-todo {
+  background-color: #ffeeba;
+  border: 2px solid #ffc107;
+  font-weight: bold;
+}
